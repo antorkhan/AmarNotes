@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     tools:context="info.antor.www.amarnotes.MainActivity">
 
+    <com.google.android.gms.ads.AdView
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="100dp"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-7485001410940669/2514328687">
+    </com.google.android.gms.ads.AdView>
 
-
-        <EditText
-
-            android:hint="Quick Note Here"
-            android:id="@+id/noteText"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-
+    <EditText
+        android:layout_below="@id/adView"
+        android:layout_margin="20dp"
+        android:layout_centerInParent="true"
+        android:hint="Quick Note"
+        android:id="@+id/noteText"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 
     <Button
+        android:layout_below="@id/noteText"
+        android:layout_centerHorizontal="true"
         android:id="@+id/insertButton"
         android:text="Add Note"
         android:onClick="insertData"
@@ -32,14 +41,23 @@
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/getAll"
+        android:layout_below="@id/insertButton"
+        android:layout_centerHorizontal="true"
         android:text="View Notes"
         android:onClick="getAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/clearAll"
+        android:layout_below="@id/getAll"
+        android:layout_centerHorizontal="true"
         android:text="Clear Notes"
         android:onClick="clearAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-</LinearLayout>
+
+
+
+
+
+</RelativeLayout>
